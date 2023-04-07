@@ -20,7 +20,7 @@ quoteBtn.addEventListener("click", getQuote);
 
 // change theme
 const colorBtn = document.querySelector("#color-btn");
-const container = document.querySelector(".container");
+const container = document.querySelector("body");
 
 colorBtn.addEventListener("click", function () {
   if (container.classList.contains("dark-mode")) {
@@ -31,12 +31,15 @@ colorBtn.addEventListener("click", function () {
     container.classList.add("flower-mode");
   } else if (container.classList.contains("flower-mode")) {
     container.classList.remove("flower-mode");
+    container.classList.add("rainbow-mode");
+  } else if (container.classList.contains("rainbow-mode")) {
+    container.classList.remove("rainbow-mode");
     container.classList.add("sky-mode");
   } else if (container.classList.contains("sky-mode")) {
     container.classList.remove("sky-mode");
-    container.classList.add("star-mode");
-  } else if (container.classList.contains("star-mode")) {
-    container.classList.remove("star-mode");
+    container.classList.add("glitter-mode");
+  } else if (container.classList.contains("glitter-mode")) {
+    container.classList.remove("glitter-mode");
     container.classList.add("purple-mode");
   } else if (container.classList.contains("purple-mode")) {
     container.classList.remove("purple-mode");

@@ -14,16 +14,16 @@
     --card-height: 50vh;
     --card-width: calc(var(--card-height) / 1.5);
     --dark-color: #22222D;
-    --blue-color: #17adb8;
+    --blue-color: #4f55b0;
     --sky-color: #9dc9d8;
-    --purple-color: #816797;
+    --purple-color: #a47cba;
     --light-color: #f2f2f2;
   }
   
   
   body {
+    background-color: var(--dark-color);
     height: 100%;
-    background-color: var(--theme-color);
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -39,7 +39,7 @@
   }
   
   .card {
-    background: #191c29;
+    background: var(--dark-color);
     width: var(--card-width);
     height: var(--card-height);
     min-width: 300px;
@@ -127,9 +127,11 @@
     animation: spin 2.5s linear infinite;
   }
 
+
+  /* buttons */
     #quote-btn {
     display: block;
-    font-family: 'Gloock', serif;
+    font-family: 'Schibsted Grotesk', sans-serif;
     font-size:  1em;
     color:white;
     background-image: linear-gradient(to bottom right, #3c67e3, #4e00c2);
@@ -143,10 +145,11 @@
   }
 
   #quote-btn:hover {
-    background-image: linear-gradient(to bottom right, #1f44b3, #081847);
+    background-image: linear-gradient(to bottom right, #2c53ca, #4203a1);
   }
 
   #color-btn {
+    font-family: 'Schibsted Grotesk', sans-serif;
     position: absolute;
     top: 20px;
     right: 20px;
@@ -159,14 +162,30 @@
     box-shadow:0px 3px 10px #101014;
   }
 
+  .fa-wand-magic-sparkles {
+    padding: 0 10px;
+  }
+
+
   /* theme colours */
   .dark-mode {
     background-color: #333;
     color:var(--light-color);
   }
+
+  .dark-mode #quote-btn {
+    background-image: linear-gradient(to bottom right, #1e1f2d, #110e17);
+    box-shadow:0px 10px 10px hsla(245, 26%, 8%, 0.6);
+  }
+
+  .dark-mode #quote-btn:hover {
+    background-image: linear-gradient(to bottom right, #181923, #0c0b0e);
+    box-shadow:0px 10px 10px hsla(245, 26%, 8%, 0.6);
+  }
   
   .light-mode {
-    background-color: var(--light-color);
+    background-image: url(img/light.jpeg);
+    background-size: cover;
     color: #333;
   }
 
@@ -174,24 +193,47 @@
     color: #333;
   }
 
-  .star-mode {
-    background: url(img/stars.jpg);
+  .rainbow-mode {
+    background-image: url(img/rainbow.jpg);
     background-size: cover;
-    color: var(--light-color);
+    color: #333;
+  }
+
+  .rainbow-mode h1 {
+    color: #333;
+  }
+
+  .glitter-mode {
+    background: url(img/glitter.jpeg);
+    background-size: cover;
+    color: #333;
+  }
+
+  .glitter-mode h1 {
+    color: #333;
   }
   
+  .glitter-mode #quote-btn {
+    background-image: linear-gradient(to bottom right, #70425c, #481338);
+    box-shadow:0px 10px 10px hsl(338, 68%, 6%, 60%);
+  }
+  
+  .glitter-mode #quote-btn:hover {
+    background-image: linear-gradient(to bottom right, #62354e, #360b29);
+  }
+
   .purple-mode {
     background-color: var(--purple-color);
     color: var(--light-color);
   }
 
   .purple-mode #quote-btn {
-    background-image: linear-gradient(to bottom right, rgb(130, 53, 159), rgb(81, 21, 103));
+    background-image: linear-gradient(to bottom right, #715296, #412662);
     box-shadow:0px 10px 10px hsl(338, 68%, 6%, 60%);
   }
   
   .purple-mode #quote-btn:hover {
-    background-image: linear-gradient(to bottom right, rgb(106, 39, 131), rgb(63, 11, 82));
+    background-image: linear-gradient(to bottom right, #5c3d82, #351958);
   }
 
   .blue-mode {
@@ -223,10 +265,12 @@
 
 
   /* footer */
-  footer {
-    background-color: #111054;
+  .footer {
+    font-family: 'Schibsted Grotesk', sans-serif;
+    background-color: var(--dark-color);
     color: #f2f2f2;
-    padding: 20px;
+    width: 100%;
+    padding: 2em;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -234,7 +278,8 @@
     align-items: center;
   }
   
-  footer a {
+  .footer a {
+    line-height: 1.5em;
     color: #f2f2f2;
     text-decoration: none;
   }
