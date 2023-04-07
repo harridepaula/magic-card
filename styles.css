@@ -13,7 +13,7 @@
   :root {
     --card-height: 50vh;
     --card-width: calc(var(--card-height) / 1.5);
-    --dark-color: #111054;
+    --dark-color: #22222D;
     --blue-color: #17adb8;
     --sky-color: #9dc9d8;
     --purple-color: #816797;
@@ -38,11 +38,6 @@
     position: relative;
   }
   
-  h1 {
-    color: white;
-    margin: 140px 0 40px 0;
-  }
-  
   .card {
     background: #191c29;
     width: var(--card-width);
@@ -62,6 +57,16 @@
     font-family: 'Tangerine', cursive;
   }
 
+  .card:hover:before, .card:hover:after {
+    opacity: 60%;
+  }
+
+  /* text */
+  h1 {
+    color: white;
+    margin: 160px 0 40px 0;
+  }
+
   #quote {
     color:white;
     font-family: 'Gloock', serif;
@@ -71,24 +76,19 @@
 
   #author {
     color:white;
-    font-family: 'Tangerine', cursive;
-    font-size: 14;
-    font-size: 0.8em;
+    font-family: 'Gloock', serif;
+    font-size: 0.8rem;
   }
 
   #author::before {
     color:white;
-    font-family: 'Tangerine', cursive;
-    font-size: 14;
+    font-family: 'Gloock', cursive;
+    font-size: 0.8rem;
   }
 
   #quote:hover, #author:hover, .card:hover {
     color: rgb(88 199 250 / 100%);
     transition: color 1s;
-  }
-  .card:hover:before, .card:hover:after {
-    animation: none;
-    opacity: 0;
   }
   
   
@@ -127,7 +127,7 @@
     animation: spin 2.5s linear infinite;
   }
 
-    #btn {
+    #quote-btn {
     display: block;
     font-family: 'Gloock', serif;
     font-size:  1em;
@@ -138,15 +138,28 @@
     margin: 4em auto 7em auto;
     padding: 1.2em 0;
     border-radius: 10px;
-    box-shadow:0px 10px 10px #121c49;
+    box-shadow:0px 10px 10px rgb(18, 28, 73, 80%);
     cursor: pointer;
   }
 
-  #btn:hover {
+  #quote-btn:hover {
     background-image: linear-gradient(to bottom right, #1f44b3, #081847);
   }
 
-  /* change theme colour */
+  #color-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--dark-color);
+    color: #f2f2f2;
+    cursor: pointer;
+    box-shadow:0px 3px 10px #101014;
+  }
+
+  /* theme colours */
   .dark-mode {
     background-color: #333;
     color:var(--light-color);
@@ -172,11 +185,15 @@
     color: var(--light-color);
   }
 
-  .purple-mode #btn {
+  .purple-mode #quote-btn {
     background-image: linear-gradient(to bottom right, rgb(130, 53, 159), rgb(81, 21, 103));
     box-shadow:0px 10px 10px hsl(338, 68%, 6%, 60%);
   }
   
+  .purple-mode #quote-btn:hover {
+    background-image: linear-gradient(to bottom right, rgb(106, 39, 131), rgb(63, 11, 82));
+  }
+
   .blue-mode {
     background-color: var(--blue-color);
     color: var(--light-color);
@@ -188,9 +205,13 @@
     color: var(--light-color);
   }
 
-  .flower-mode #btn {
-    background-image: linear-gradient(to bottom right, rgb(173, 9, 116), rgb(129,1,84));
+  .flower-mode #quote-btn {
+    background-image: linear-gradient(to bottom right, rgb(203, 33, 144), rgb(129,1,84));
     box-shadow:0px 10px 10px hsl(338, 68%, 6%, 60%);
+  }
+
+  .flower-mode #quote-btn:hover {
+    background-image: linear-gradient(to bottom right, rgb(189, 27, 132), rgb(116, 4, 77));
   }
 
   .sky-mode {
@@ -199,17 +220,23 @@
     color: var(--light-color);
     background-color: var(--sky-color);
   }
-  
-  #color-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    background-color: var(--dark-color);
+
+
+  /* footer */
+  footer {
+    background-color: #111054;
     color: #f2f2f2;
-    cursor: pointer;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  footer a {
+    color: #f2f2f2;
+    text-decoration: none;
   }
 
 
@@ -225,8 +252,15 @@
   
 
   /* media query */
-  @media only screen and (max-width: 700px) {
-    body {
-      background-color: lightblue;
+  @media only screen and (max-width: 550px) {
+    h1 {
+      font-size: 1.3em;
+      margin-top: 100px;
+      margin-bottom: 20px;
+    }
+
+    #quote-btn {
+      margin-top: 10px;
+      padding: 15px;
     }
   }

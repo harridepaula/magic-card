@@ -1,7 +1,7 @@
 // quote API
 let quote = document.getElementById("quote");
 let author = document.getElementById("author");
-let btn = document.getElementById("btn");
+let quoteBtn = document.getElementById("quote-btn");
 
 const url = "https://api.quotable.io/random";
 
@@ -16,7 +16,7 @@ let getQuote = () => {
     });
 };
 
-btn.addEventListener("click", getQuote);
+quoteBtn.addEventListener("click", getQuote);
 
 // change theme
 const colorBtn = document.querySelector("#color-btn");
