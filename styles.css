@@ -295,19 +295,15 @@
     }
   }
 
-  @keyframes shake {
-    0% { transform: translateX(0); }
-    10%, 90% { transform: translateX(-5px); }
-    20%, 80% { transform: translateX(5px); }
-    30%, 50%, 70% { transform: translateX(-5px); }
-    40%, 60% { transform: translateX(5px); }
-    100% { transform: translateX(0); }
-}
-
-.shake {
-    animation: shake 0.5s ease-in-out infinite;
-}
+  @keyframes tilt {
+    0% { transform: rotate(-2deg); }
+    50% { transform: rotate(2deg); }
+    100% { transform: rotate(-2deg); }
+  }
   
+  .tilt {
+    animation: tilt 1s ease-in-out infinite;
+  }
 
   /* media query */
   @media only screen and (max-width: 550px) {

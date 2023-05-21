@@ -51,18 +51,18 @@ colorBtn.addEventListener("click", function () {
 });
 
 
-/*** SHAKE BUTTON ANIMATION ***/
+/*** TILT BUTTON ANIMATION ***/
 // Get the "Get Magic Card" button element
 const magicButton = document.getElementById('quote-btn');
 
-// Function to add the shake class to the button
-function addShakeEffect() {
-    magicButton.classList.add('shake');
+// Function to add the tilt class to the button
+function addTiltEffect() {
+  magicButton.classList.add('tilt');
 }
 
-// Function to remove the shake class from the button
-function removeShakeEffect() {
-    magicButton.classList.remove('shake');
+// Function to remove the tilt class from the button
+function removeTiltEffect() {
+  magicButton.classList.remove('tilt');
 }
 
 // Variable to store the timeout ID
@@ -70,7 +70,7 @@ let timeoutId;
 
 // Function to start the timeout
 function startTimeout() {
-    timeoutId = setTimeout(addShakeEffect, 10000); // 10 seconds
+    timeoutId = setTimeout(addTiltEffect, 5000); // 5 seconds
 }
 
 // Function to clear the timeout
@@ -80,9 +80,10 @@ function clearTimeout() {
 
 // Event listener for button click
 magicButton.addEventListener('click', () => {
-    removeShakeEffect(); // Remove the shake effect when the button is clicked
+    removeTiltEffect(); // Remove the tilt effect when the button is clicked
     startTimeout(); // Start the timeout after the button is clicked
 });
 
 // Start the initial timeout
 startTimeout();
+
