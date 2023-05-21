@@ -49,3 +49,40 @@ colorBtn.addEventListener("click", function () {
     container.classList.add("dark-mode");
   }
 });
+
+
+/*** SHAKE BUTTON ANIMATION ***/
+// Get the "Get Magic Card" button element
+const magicButton = document.getElementById('quote-btn');
+
+// Function to add the shake class to the button
+function addShakeEffect() {
+    magicButton.classList.add('shake');
+}
+
+// Function to remove the shake class from the button
+function removeShakeEffect() {
+    magicButton.classList.remove('shake');
+}
+
+// Variable to store the timeout ID
+let timeoutId;
+
+// Function to start the timeout
+function startTimeout() {
+    timeoutId = setTimeout(addShakeEffect, 10000); // 10 seconds
+}
+
+// Function to clear the timeout
+function clearTimeout() {
+    clearTimeout(timeoutId);
+}
+
+// Event listener for button click
+magicButton.addEventListener('click', () => {
+    removeShakeEffect(); // Remove the shake effect when the button is clicked
+    startTimeout(); // Start the timeout after the button is clicked
+});
+
+// Start the initial timeout
+startTimeout();
